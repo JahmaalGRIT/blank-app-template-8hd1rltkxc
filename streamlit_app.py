@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 import google.generativeai as genai
-st.title("My fist AI app")
+st.title(My fist AI app)
 
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
