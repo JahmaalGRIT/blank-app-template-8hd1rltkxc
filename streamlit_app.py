@@ -1,17 +1,13 @@
 import streamlit as st
-st.title("""
-# my first app
-         Hello world
-         """) 
-
 import os
-
 import google.generativeai as genai
+st.title("My fist AI app")
 
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
 # Create the model
 # See https://ai.google.dev/api/python/google/generativeai/GenerativeModel
+
 generation_config = {
   "temperature": 1,
   "top_p": 0.95,
@@ -28,10 +24,8 @@ model = genai.GenerativeModel(
 )
 
 chat_session = model.start_chat(
-  history=[
-  ]
+  history=[ ]
 )
 
 response = chat_session.send_message("INSERT_INPUT_HERE")
-
 print(response.text)
